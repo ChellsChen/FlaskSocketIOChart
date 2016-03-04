@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Flask-SocketIO-Chat</title>
+        <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+        <script type="text/javascript" src="/static/jquery.js"></script>
+        <script type="text/javascript" src="/static/bootstrap.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Flask SocketIO Chat</h1>
+        </header>
+
+        <div class="container-fluid row">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="col-md-12">
+                {{ form.name.label }}: {{ form.name() }} {% for error in form.name.errors %}{{ error }}{% endfor %}
+                </div>
+                <div class="col-md-12">
+                {{ form.room.label }}: {{ form.room() }} {% for error in form.room.errors %}{{ error }}{% endfor %}
+                </div>
+                <div class="col-md-12">
+                {{ form.submit() }}
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
